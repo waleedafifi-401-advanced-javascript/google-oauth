@@ -1,6 +1,6 @@
 # google-oauth
 
-![coverage](https://img.shields.io/badge/coverage-100%25-yellowgreen) ![version](https://img.shields.io/badge/version-0.0.1-blue) ![TEST](https://img.shields.io/badge/Test-16-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-100%25-yellowgreen) ![version](https://img.shields.io/badge/version-0.0.1-blue) ![Google](https://img.shields.io/badge/Google-+-red)
 
 **Group member:**
 1. [Adnan Abu Muammer](https://github.com/amuammer)
