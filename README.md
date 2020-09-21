@@ -18,6 +18,15 @@ Using your terminal clone the repo.
 git clone https://github.com/waleedafifi-401-advanced-javascript/google-oauth.git
 ```
 
+**.env file**
+```
+MONGOOSE_URL=mongodb://localhost:27017/oauth
+JWT_SECRET_KEY="SECRET"
+PORT=3000
+CLIENT_ID=82394101385-jaqm9i6p3cdu3i374lgg1b9ao6gfnpe3.apps.googleusercontent.com
+CLIENT_SECRET=IBI9MQ0P5MTBZIyINtEQDDY0
+```
+
 Install the dependencies
 ```
 npm install
