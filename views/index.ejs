@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Auth Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container"></div>
+        <div class="modal is-open">
+            <div class="modal-container">
+                <div class="modal-left">
+                    <h1 class="modal-title">Welcome!</h1>
+                    <% if (typeof msg != 'undefined') { %>
+                    <p class="modal-desc"><%= msg %></p>
+                    <a href="#" id="oauth" class="google btn"><i class="fa fa-google fa-fw">
+                        </i> Login with Google+
+                    </a>
+
+                    <% } %>
+
+                    <% if (typeof user != 'undefined') { %>
+                    <p class="modal-desc"><%= user %> <span class="label bg-green">verified</span></p>
+                    <% } %>
+
+                    <% if (typeof token != 'undefined') { %>
+                    <p class="modal-desc"><%= token %> <span class="label bg-red">for testing</span></p>
+                    <% } %>
+
+                </div>
+                <div class="modal-right">
+                    <img src="https://flgowrley.files.wordpress.com/2020/04/uprufcw9z5kv4oavtnheze.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let URL = 'https://accounts.google.com/o/oauth2/v2/auth';
+
+        let options = {
+            response_type: 'code',
+            client_id: '82394101385-jaqm9i6p3cdu3i374lgg1b9ao6gfnpe3.apps.googleusercontent.com',
+            redirect_uri: 'http://localhost:3000/oauth',
+            scope: 'openid email',
+            state: 'http://localhost',
+            access_type: 'offline',
+        }
+
+        let QueryString = Object.keys(options).map((key) => {
+            return `${key}=` + encodeURIComponent(options[key]);
+        }).join("&");
+
+        let authURL = `${URL}?${QueryString}`;
+
+        let link = document.getElementById('oauth');
+        link.setAttribute('href', authURL);
+    </script>
+
+</body>
+
+</html>
